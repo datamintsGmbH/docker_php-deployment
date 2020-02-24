@@ -26,8 +26,5 @@ RUN php -r "unlink('composer-setup.php');"
 # Install tools for deployment.
 RUN apt-get install -y -q openssh-client rsync
 
-# Use Composer as the entrypoint.
-ENTRYPOINT ["composer"]
-
 # Run Composer.
 CMD ["composer"]
