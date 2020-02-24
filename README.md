@@ -2,6 +2,8 @@
 
 Docker image for deployment of PHP applications, intended for use within GitLab CI.
 
+The image comes with tags `7.2`, `7.3`, and `7.4` where the tags represent the PHP version inside the image.
+
 
 ## PHP
 
@@ -46,3 +48,8 @@ For deployment, the following packages are installed:
 - git
 - openssh-client
 - rsync
+
+
+## Build/update
+
+You can use the i
