@@ -23,6 +23,9 @@ RUN php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978
 RUN php composer-setup.php --no-ansi --install-dir=/usr/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');"
 
+# Install git.
+RUN apt-get install -y -q git
+
 # Install tools for deployment.
 RUN apt-get install -y -q openssh-client rsync
 
