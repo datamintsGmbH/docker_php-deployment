@@ -19,7 +19,7 @@ if [ ! -d "./${TAG}" ]; then
 fi
 
 # Build the image.
-docker build -t $IMAGE:$TAG ./$TAG
+docker build --no-cache -t $IMAGE:$TAG ./$TAG
 
 # Push the image.
 docker push $IMAGE:$TAG
