@@ -52,4 +52,4 @@ For deployment, the following packages are installed:
 
 ## Build/update
 
-You can use the `build.sh` script to build or update the image and push them to Docker Hub.
+You can use the `build.sh` script to build or update the image and push them to Docker Hub (e.g. `./build.sh datamints/php-deployment 7.2`).
