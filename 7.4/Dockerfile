@@ -10,6 +10,12 @@ RUN apt-get install -y -q apt-utils apt-transport-https lsb-release ca-certifica
 # Install unzip as it is recommended by Composer to extract packages.
 RUN apt-get install -y -q unzip
 
+# Install git.
+RUN apt-get install -y -q git
+
+# Install tools for deployment.
+RUN apt-get install -y -q openssh-client rsync
+
 # Install PHP packages from deb.sury.org.
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 RUN sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
@@ -26,11 +32,8 @@ RUN php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978
 RUN php composer-setup.php --no-ansi --install-dir=/usr/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');"
 
-# Install git.
-RUN apt-get install -y -q git
-
-# Install tools for deployment.
-RUN apt-get install -y -q openssh-client rsync
+# Install Composer package for faster installs.
+RUN composer global require hirak/prestissimo
 
 # Run Composer.
 CMD ["composer"]
