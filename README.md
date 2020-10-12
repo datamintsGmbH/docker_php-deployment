@@ -31,9 +31,13 @@ The package uses PHP from deb.sury.org with the following extensions:
 
 ## Composer
 
-Composer is installed in version 1.9.3; if you want the latest one, add the following line to your `.gitlab.yml` file:
+Composer is installed in the latest version as of build time of the container; if you want the really latest one, add the following line to your `.gitlab.yml` file
 
 > composer selfupdate
+
+or the following to your own `Dockerfile`
+
+> RUN composer selfupdate
 
 
 ## Node.js
@@ -48,6 +52,8 @@ For deployment, the following packages are installed:
 - git
 - openssh-client
 - rsync
+- sshpass
+- python
 
 
 ## Build/update

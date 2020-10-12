@@ -13,8 +13,11 @@ RUN apt-get install -y -q unzip
 # Install git.
 RUN apt-get install -y -q git
 
+# Install Python.
+RUN apt-get install -y -q python3
+
 # Install tools for deployment.
-RUN apt-get install -y -q openssh-client rsync
+RUN apt-get install -y -q openssh-client rsync sshpass
 
 # Install PHP packages from deb.sury.org.
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
